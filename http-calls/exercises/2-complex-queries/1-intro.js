@@ -19,30 +19,29 @@
  */
 import "./qs.js";
 async function example1() {
-  const query = qs.stringify(
-    {
-      /** here we can include all query parameter fields that we want to pass and their values */
-      // we provide which fields we want to select
+const query = qs.stringify(
+{
+       /** here we can include all query parameter fields that we want to pass and their values */
+       // we provide which fields we want to select
     fields: ['name', 'price'],
-    // we add filters
+     // we add filters
     filters: {
       price: {
         $lte: 40,
         $gte: 15
       }
     },
-    // we define the ordering
+     // we define the ordering
     sort: ['price:asc']
   }, {
     encodeValuesOnly: true,
   });
   console.log("The querystring", query);
 
-  // call the matching endpoint and include the querystring after the ?
+   // call the matching endpoint and include the querystring after the ?
   const response = await fetch(`http://localhost:1337/api/products?${query}`);
   const result = await response.json();
-  // from here on we can use the result from the server in our javascript code
+   // from here on we can use the result from the server in our javascript code
   console.log(result.data.map(product => `${product.attributes.name} ${product.attributes.price}€`).join("\n"));
 }
 example1();
-
