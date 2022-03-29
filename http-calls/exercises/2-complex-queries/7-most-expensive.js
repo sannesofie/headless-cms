@@ -19,7 +19,7 @@ async function ex6() {
 
    // call the matching endpoint and include the querystring after the ?
   const baseUrl = 'http://localhost:1337/api/products';
-  const response = await fetch(${baseUrl}?${query});
+  const response = await fetch(`${baseUrl}?${query}`);
   const result = await response.json();
   let prices = [];
   for (let i = 0; i < result.data.length; i++) {

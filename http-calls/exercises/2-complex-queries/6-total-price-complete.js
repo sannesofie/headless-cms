@@ -5,24 +5,24 @@
  * and taking the discount rates into account 
  *
 
- import "./qs.js";
- async function ex6() {
-   const query = qs.stringify(
-   {
-       _
-   }, 
-   {
-     encodeValuesOnly: true,
-   });
-   console.log("The query string", query);
- 
+import "./qs.js";
+async function ex6() {
+  const query = qs.stringify(
+  {
+      _
+  }, 
+  {
+    encodeValuesOnly: true,
+  });
+console.log("The query string", query);
+
    // call the matching endpoint and include the querystring after the ?
-   const baseUrl = _;
-   const response = await fetch(`${_}?${query}`);
-   const result = await response.json();
-   _
- }
- ex6();
+const baseUrl = _;
+const response = await fetch(`${_}?${query}`);
+const result = await response.json();
+_
+}
+ex6();
 
  */
 
@@ -40,7 +40,7 @@ async function ex6() {
 
   // call the matching endpoint and include the querystring after the ?
   const baseUrl = 'http://localhost:1337/api/products';
-  const response = await fetch(${baseUrl}?${query});
+  const response = await fetch(`${baseUrl}?${query}`);
   const result = await response.json();
   console.log(result);
   let sum = 0;

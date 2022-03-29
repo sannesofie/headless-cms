@@ -5,7 +5,7 @@
  * the user to create a new category
  */
 
- async function createNewCategory(name, description) {
+async function createNewCategory(name, description) {
   const path = 'categories/';
   const body = {
     data: {
@@ -13,7 +13,7 @@
       description: description,
     },
   };
-  const url = http://localhost:1337/api/${path};
+  const url = http//localhost:1337/api/${path};
   const response = await fetch(url, {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     headers: {
