@@ -6,4 +6,3 @@ async function removeProduct(productId) {
   _
 }
 
-_
