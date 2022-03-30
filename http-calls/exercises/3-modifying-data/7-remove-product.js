@@ -1,7 +1,7 @@
 /**
  * Complete the following function that
  * removes the product with the given id
- */
+ */github
 
 async function removeProduct(productId) {
   const path = products/$,{productId};
